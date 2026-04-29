@@ -3,44 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Master - 다목적 이미지 툴킷</title>
+    <title>Image Master - 일괄 이미지 변환 및 크기 조절</title>
     <style>
-        :root { --bg: #0f0f0f; --card: #1e1e1e; --accent: #4CAF50; --text: #e0e0e0; }
-        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
-        header { padding: 80px 20px; text-align: center; }
-        h1 { font-size: 3rem; margin: 0; color: white; }
-        .tagline { color: var(--accent); font-size: 1.2rem; margin: 10px 0 40px; }
-        .download-btn { background-color: var(--accent); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; display: inline-block; }
-        .download-btn:hover { transform: scale(1.05); background-color: #45a049; }
-        .container { max-width: 900px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px 20px; }
-        .feature { background: var(--card); padding: 25px; border-radius: 15px; border: 1px solid #333; }
-        .feature h3 { margin-top: 0; color: var(--accent); }
+        :root {
+            --bg: #0f0f0f;
+            --card: #1e1e1e;
+            --accent: #4CAF50;
+            --text: #e0e0e0;
+            --secondary: #888;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', 'Malgun Gothic', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+        }
+
+        .beta-badge {
+            background-color: #ff9800;
+            color: black;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            vertical-align: middle;
+            margin-left: 10px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            color: white;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin: 20px 0 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 20px 45px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            background-color: #45a049;
+            box-shadow: 0 15px 30px rgba(76, 175, 80, 0.4);
+        }
+
+        .version-info {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .container {
+            max-width: 1000px;
+            width: 90%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 20px;
+        }
+
+        .feature {
+            background: var(--card);
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #2a2a2a;
+            transition: border 0.3s;
+        }
+
+        .feature:hover {
+            border-color: var(--accent);
+        }
+
+        .feature h3 {
+            margin-top: 0;
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .feature p {
+            color: var(--secondary);
+            margin-bottom: 0;
+        }
+
+        footer {
+            margin: 100px 0 50px;
+            text-align: center;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        /* 반응형 모바일 대응 */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1.1rem; }
+        }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>🖼️ Image Master</h1>
-        <p class="tagline">v2.2 - 리소스 팩 제작자를 위한 올인원 이미지 도구</p>
-        <a href="ImageMaster_v2.2_Setup.exe" class="download-btn">Windows용 다운로드</a>
+        <h1>🖼️ Image Master <span class="beta-badge">BETA</span></h1>
+        <p class="tagline">마인크래프트 리소스 팩 제작자와 개발자를 위한<br>가장 빠르고 가벼운 이미지 일괄 변환 도구</p>
+        
+        <a href="여기에_복사한_링크_붙여넣기" class="download-btn">Windows용 무료 다운로드</a>
+        
+        <div class="version-info">최신 버전: v2.2-beta | 용량: 약 186MB</div>
     </header>
 
     <div class="container">
         <div class="feature">
-            <h3>강력한 변환</h3>
-            <p>JFIF, WebP, AVIF, PSD 등 까다로운 확장자를 한 번에 변환합니다.</p>
+            <h3>강력한 확장자 지원</h3>
+            <p>JFIF, WebP, AVIF, PSD 등 웹과 그래픽 작업에서 쓰이는 모든 이미지를 PNG/JPG로 즉시 변환합니다.</p>
         </div>
         <div class="feature">
-            <h3>스마트 리사이징</h3>
-            <p>비율을 유지하며 픽셀 단위로 크기를 조절합니다. 고화질 필터가 적용됩니다.</p>
+            <h3>정밀한 크기 조절</h3>
+            <p>픽셀(px) 단위 조절은 물론, 비율 유지 기능을 통해 이미지 찌그러짐 없이 일괄 리사이징이 가능합니다.</p>
         </div>
         <div class="feature">
-            <h3>SVG 뷰어 포함</h3>
-            <p>SVG 파일을 더블클릭해서 바로 확인하는 뷰어가 함께 설치됩니다.</p>
+            <h3>SVG 뷰어 통합</h3>
+            <p>따로 찾을 필요 없습니다. 설치 시 옵션을 선택하면 고성능 SVG 미리보기 도구가 함께 제공됩니다.</p>
         </div>
     </div>
 
-    <footer style="margin: 50px; color: #666;">
-        © 2026 Image Master Project. Created for Minecrafters.
+    <footer>
+        <p>프로그램 개발 및 웹사이트 디자인: 본인닉네임</p>
+        <p>© 2026 Image Master Project. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
