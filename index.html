@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Master - 일괄 이미지 변환 및 크기 조절</title>
+    <meta name="description" content="마인크래프트 리소스 팩 제작을 위한 일괄 이미지 변환기 및 크기 조절 도구">
+    <meta name="keywords" content="이미지 변환, 이미지 리사이저, PNG 변환, JFIF 변환, SVG 뷰어, 마인크래프트 툴">
+    
     <style>
         :root {
             --bg: #0f0f0f;
             --card: #1e1e1e;
             --accent: #4CAF50;
+            --github: #ffffff;
             --text: #e0e0e0;
             --secondary: #888;
         }
@@ -58,30 +62,44 @@
             margin-right: auto;
         }
 
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .download-btn {
             background-color: var(--accent);
             color: white;
-            padding: 20px 45px;
+            padding: 18px 40px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 1.2rem;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-block;
-            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.2);
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .download-btn:hover {
-            transform: translateY(-5px);
-            background-color: #45a049;
-            box-shadow: 0 15px 30px rgba(76, 175, 80, 0.4);
+        .github-btn {
+            background-color: #333;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #444;
         }
 
-        .version-info {
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: #555;
-        }
+        .download-btn:hover { background-color: #45a049; transform: translateY(-3px); }
+        .github-btn:hover { background-color: #444; transform: translateY(-3px); }
 
         .container {
             max-width: 1000px;
@@ -97,23 +115,9 @@
             padding: 35px;
             border-radius: 20px;
             border: 1px solid #2a2a2a;
-            transition: border 0.3s;
         }
 
-        .feature:hover {
-            border-color: var(--accent);
-        }
-
-        .feature h3 {
-            margin-top: 0;
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-
-        .feature p {
-            color: var(--secondary);
-            margin-bottom: 0;
-        }
+        .feature h3 { margin-top: 0; color: var(--accent); }
 
         footer {
             margin: 100px 0 50px;
@@ -121,43 +125,44 @@
             color: #444;
             font-size: 0.9rem;
         }
-
-        /* 반응형 모바일 대응 */
-        @media (max-width: 600px) {
-            h1 { font-size: 2.5rem; }
-            .tagline { font-size: 1.1rem; }
-        }
     </style>
 </head>
 <body>
 
     <header>
         <h1>🖼️ Image Master <span class="beta-badge">BETA</span></h1>
-        <p class="tagline">마인크래프트 리소스 팩 제작자와 개발자를 위한<br>가장 빠르고 가벼운 이미지 일괄 변환 도구</p>
+        <p class="tagline">v2.2-beta | 마인크래프트 리소스 팩 제작자를 위한<br>가장 빠르고 가벼운 이미지 일괄 변환 및 크기 조절 도구</p>
         
-        <a href="https://github.com/116njj-JAEME/image-master/releases/download/v2.2-beta/ImageMaster_v2.2_Setup.exe" class="download-btn">Windows용 무료 다운로드</a>
-        
-        <div class="version-info">최신 버전: v2.2-beta | 용량: 약 186MB</div>
+        <div class="btn-group">
+            <a href="https://github.com/116njj-JAEME/image-master/releases/download/v2.2-beta/ImageMaster_v2.2_Setup.exe" class="download-btn">
+                <span>Windows용 다운로드</span>
+            </a>
+            
+            <a href="https://github.com/116njj/image-master" target="_blank" class="github-btn">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" style="filter: invert(1);">
+                <span>GitHub 소스코드</span>
+            </a>
+        </div>
     </header>
 
     <div class="container">
         <div class="feature">
             <h3>강력한 확장자 지원</h3>
-            <p>JFIF, WebP, AVIF, PSD 등 웹과 그래픽 작업에서 쓰이는 모든 이미지를 PNG/JPG로 즉시 변환합니다.</p>
+            <p>JFIF, WebP, AVIF 등 까다로운 이미지를 PNG/JPG로 즉시 변환하여 리소스 팩 작업 효율을 높입니다.</p>
         </div>
         <div class="feature">
             <h3>정밀한 크기 조절</h3>
-            <p>픽셀(px) 단위 조절은 물론, 비율 유지 기능을 통해 이미지 찌그러짐 없이 일괄 리사이징이 가능합니다.</p>
+            <p>픽셀(px) 단위 조절 및 비율 유지 기능을 통해 이미지 손상 없이 일괄 리사이징이 가능합니다.</p>
         </div>
         <div class="feature">
             <h3>SVG 뷰어 통합</h3>
-            <p>따로 찾을 필요 없습니다. 설치 시 옵션을 선택하면 고성능 SVG 미리보기 도구가 함께 제공됩니다.</p>
+            <p>설치 시 제공되는 전용 뷰어를 통해 웹용 그래픽 소스인 SVG 파일을 즉시 미리보기 할 수 있습니다.</p>
         </div>
     </div>
 
     <footer>
-        <p>프로그램 개발 및 웹사이트 디자인: Jail, 제미나이</p>
-        <p>© 2026 Image Master Project. All rights reserved.</p>
+        <p>개발 및 디자인: 116njj</p>
+        <p>© 2026 Image Master Project. Powered by GitHub Pages.</p>
     </footer>
 
 </body>
