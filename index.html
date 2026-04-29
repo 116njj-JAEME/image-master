@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Master - 올인원 이미지 툴킷</title>
+    <title>Image Master - 빠르고 가벼운 이미지 일괄 변환 도구</title>
     
+    <meta name="description" content="JFIF, WebP 변환부터 리사이징까지, 번거로운 이미지 작업을 클릭 한 번으로 해결하는 가장 가벼운 도구">
+    <meta name="keywords" content="이미지 변환, WebP 변환, JFIF 변환, 이미지 리사이저, SVG 뷰어, 무료 이미지 도구">
+
     <style>
         :root {
             --bg: #0a0a0a;
@@ -31,6 +34,7 @@
             padding: 120px 20px;
             text-align: center;
             background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .version-tag {
@@ -46,7 +50,7 @@
             font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 900;
             margin: 0;
-            background: linear-gradient(to bottom, #fff 50%, #666 100%);
+            background: linear-gradient(to bottom, #fff 50%, #888 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -72,7 +76,7 @@
             font-weight: 700;
             font-size: 1.1rem;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -94,10 +98,12 @@
             background-color: var(--glass);
             color: #fff;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
         }
 
         .btn-github:hover {
             background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
         }
 
         .features {
@@ -114,6 +120,12 @@
             padding: 40px;
             border-radius: 24px;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
         }
 
         .feature-card h3 { color: var(--accent); margin-top: 0; font-size: 1.5rem; }
@@ -126,48 +138,51 @@
             width: 100%;
             color: #555;
         }
+        
+        footer a { color: #888; text-decoration: none; }
+        footer a:hover { color: var(--accent); }
     </style>
 </head>
 <body>
 
     <header>
-        <span class="version-tag">BETA VERSION 2.2</span>
+        <span class="version-tag">STABLE v2.2 BETA</span>
         <h1>Image Master</h1>
         <p class="tagline">
-            이미지 변환, 리사이징, 그리고 SVG 미리보기까지.<br>
-            가장 강력하고 가벼운 통합 도구.
+            포맷 변환, 크기 조절, 미리보기까지.<br>
+            번거로운 이미지 작업을 가장 직관적으로 해결하세요.
         </p>
         
         <div class="btn-group">
-            <a href="https://github.com/116njj-JAEME/image-master/releases/download/v2.2-beta/ImageMaster_v2.2_Setup.exe" class="btn btn-main">
-                <span>📥 통합 패키지 다운로드</span>
+            <a href="https://github.com/116njj/image-master/releases/download/v2.2-beta/ImageMaster_v2.2_Setup.exe" class="btn btn-main">
+                <span>📥 무료 다운로드 (Windows)</span>
             </a>
             
             <a href="https://github.com/116njj/image-master" target="_blank" class="btn btn-github">
                 <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="20" style="filter: invert(1);">
-                <span>GitHub</span>
+                <span>GitHub 소스코드</span>
             </a>
         </div>
     </header>
 
     <div class="features">
         <div class="feature-card">
-            <h3>강력한 일괄 변환</h3>
-            <p>JFIF, WebP, AVIF 등 윈도우에서 다루기 힘든 포맷을 단 한 번의 클릭으로 PNG/JPG로 변환합니다.</p>
+            <h3>모든 포맷 일괄 변환</h3>
+            <p>JFIF, WebP, AVIF 파일을 클릭 한 번으로 어디서나 쓸 수 있는 PNG/JPG로 변환합니다.</p>
         </div>
         <div class="feature-card">
-            <h3>비율 유지 편집</h3>
-            <p>픽셀 단위의 정밀한 크기 조절이 가능하며, 원본 비율을 완벽하게 유지하여 이미지가 깨지지 않습니다.</p>
+            <h3>스마트 리사이징</h3>
+            <p>비율 유지 기능을 탑재하여, 이미지가 찌그러질 걱정 없이 여러 장의 사진 크기를 한 번에 최적화합니다.</p>
         </div>
         <div class="feature-card">
-            <h3>SVG 뷰어 내장</h3>
-            <p>별도의 프로그램 없이도 SVG 파일을 즉시 미리볼 수 있는 도구가 포함되어 있어 작업 효율이 극대화됩니다.</p>
+            <h3>강력한 미리보기</h3>
+            <p>윈도우 기본 뷰어에서 보기 힘든 SVG 파일 등을 즉시 확인할 수 있는 고성능 뷰어가 내장되어 있습니다.</p>
         </div>
     </div>
 
     <footer>
-        <p>Created by <a href="https://github.com/116njj" style="color: #666; text-decoration: none;">116njj</a></p>
-        <p>© 2026 Image Master Project.</p>
+        <p>Created by <a href="https://github.com/116njj" target="_blank">116njj</a></p>
+        <p>© 2026 Image Master Project. All rights reserved.</p>
     </footer>
 
 </body>
