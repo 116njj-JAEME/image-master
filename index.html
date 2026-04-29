@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Master - 다목적 이미지 툴킷</title>
+    <style>
+        :root { --bg: #0f0f0f; --card: #1e1e1e; --accent: #4CAF50; --text: #e0e0e0; }
+        body { background-color: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; display: flex; flex-direction: column; align-items: center; }
+        header { padding: 80px 20px; text-align: center; }
+        h1 { font-size: 3rem; margin: 0; color: white; }
+        .tagline { color: var(--accent); font-size: 1.2rem; margin: 10px 0 40px; }
+        .download-btn { background-color: var(--accent); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: transform 0.2s; display: inline-block; }
+        .download-btn:hover { transform: scale(1.05); background-color: #45a049; }
+        .container { max-width: 900px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 50px 20px; }
+        .feature { background: var(--card); padding: 25px; border-radius: 15px; border: 1px solid #333; }
+        .feature h3 { margin-top: 0; color: var(--accent); }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🖼️ Image Master</h1>
+        <p class="tagline">v2.2 - 리소스 팩 제작자를 위한 올인원 이미지 도구</p>
+        <a href="ImageMaster_v2.2_Setup.exe" class="download-btn">Windows용 다운로드</a>
+    </header>
+
+    <div class="container">
+        <div class="feature">
+            <h3>강력한 변환</h3>
+            <p>JFIF, WebP, AVIF, PSD 등 까다로운 확장자를 한 번에 변환합니다.</p>
+        </div>
+        <div class="feature">
+            <h3>스마트 리사이징</h3>
+            <p>비율을 유지하며 픽셀 단위로 크기를 조절합니다. 고화질 필터가 적용됩니다.</p>
+        </div>
+        <div class="feature">
+            <h3>SVG 뷰어 포함</h3>
+            <p>SVG 파일을 더블클릭해서 바로 확인하는 뷰어가 함께 설치됩니다.</p>
+        </div>
+    </div>
+
+    <footer style="margin: 50px; color: #666;">
+        © 2026 Image Master Project. Created for Minecrafters.
+    </footer>
+</body>
+</html>
